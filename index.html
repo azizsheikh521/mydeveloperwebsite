@@ -1,17 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Developer Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aziz Sheikh | Android Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #555;
+    }
+
+    .app-list {
+      list-style: none;
+      padding: 0;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .app-list li {
+      margin: 1rem 0;
+    }
+
+    .app-link {
+      display: block;
+      padding: 1rem;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .app-link:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .app-link {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Developer Page</h1>
-    <p>Check out my apps on Google Play:</p>
-    <ul>
-        <li><a href="https://play.google.com/store/apps/details?id=com.example.app1" target="_blank" rel="noopener noreferrer">App 1</a></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.example.app2" target="_blank" rel="noopener noreferrer">App 2</a></li>
-        <!-- Add more apps as needed -->
+  <header>
+    <h1>Aziz Sheikh</h1>
+    <p>Android Developer | Indie App Creator</p>
+  </header>
+
+  <section>
+    <h2>My Apps on Google Play</h2>
+    <ul class="app-list">
+      <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.example.app1" target="_blank" rel="noopener noreferrer">App 1 – Crossword Master</a></li>
+      <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.example.app2" target="_blank" rel="noopener noreferrer">App 2 – Word Blitz Challenge</a></li>
+      <!-- Add more apps below -->
     </ul>
+  </section>
+
+  <footer>
+    © 2025 Aziz Sheikh. All rights reserved.
+  </footer>
 </body>
 </html>
