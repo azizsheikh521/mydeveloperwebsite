@@ -25,6 +25,7 @@
       color: rgba(255, 255, 255, 0.6);
       font-size: 20px;
       animation: floatUp 8s linear infinite;
+      pointer-events: none;
     }
 
     @keyframes floatUp {
@@ -47,8 +48,9 @@
       border-radius: 30px;
       text-align: center;
       box-shadow: 0 30px 60px rgba(0,0,0,0.25);
-      position: relative;
+      position: relative; /* keeps No button inside */
       z-index: 10;
+      min-width: 320px;
     }
 
     h1 {
@@ -65,8 +67,11 @@
     }
 
     .buttons {
+      position: relative;
+      height: 80px; /* space for movement */
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 25px;
     }
 
@@ -76,7 +81,7 @@
       border-radius: 40px;
       border: none;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       font-family: 'Poppins', sans-serif;
     }
 
@@ -94,6 +99,8 @@
     #noBtn {
       background: #dee2e6;
       color: #495057;
+      position: absolute;
+      transition: left 0.2s ease, top 0.2s ease;
     }
 
     .love {
@@ -127,9 +134,12 @@
 
   <div class="card">
     <h1>My Love</h1>
-    <p>Every day with you is my favorite story…<br>Will you be my Valentine? 💕</p>
+    <p>
+      Every day with you is my favorite story…<br>
+      Will you be my Valentine? 💕
+    </p>
 
-    <div class="buttons">
+    <div class="buttons" id="btnArea">
       <button id="yesBtn" onclick="sayYes()">Yes, always 💖</button>
       <button id="noBtn">No 💔</button>
     </div>
@@ -139,17 +149,15 @@
 
   <script>
     const noBtn = document.getElementById("noBtn");
-    let escaped = false;
+    const btnArea = document.getElementById("btnArea");
 
     function moveNoButton() {
-      if (!escaped) {
-        noBtn.style.position = "absolute";
-        escaped = true;
-      }
+      const areaRect = btnArea.getBoundingClientRect();
+      const btnRect = noBtn.getBoundingClientRect();
+      const padding = 10;
 
-      const padding = 20;
-      const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-      const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+      const maxX = areaRect.width - btnRect.width - padding;
+      const maxY = areaRect.height - btnRect.height - padding;
 
       const x = Math.random() * maxX;
       const y = Math.random() * maxY;
@@ -158,7 +166,7 @@
       noBtn.style.top = y + "px";
     }
 
-    noBtn.addEventListener("mouseover", moveNoButton);
+    noBtn.addEventListener("mouseenter", moveNoButton);
     noBtn.addEventListener("touchstart", moveNoButton);
 
     function sayYes() {
