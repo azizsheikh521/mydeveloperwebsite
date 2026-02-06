@@ -7,6 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       height: 100vh;
       margin: 0;
@@ -18,6 +22,7 @@
       overflow: hidden;
     }
 
+    /* Floating hearts */
     .heart {
       position: absolute;
       color: rgba(255, 255, 255, 0.6);
@@ -31,56 +36,57 @@
       100% { transform: translateY(-10vh); opacity: 0; }
     }
 
+    /* Card */
     .card {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 50px 60px;
-      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.96);
+      padding: 60px 70px;
+      border-radius: 32px;
       text-align: center;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.25);
       position: relative;
       z-index: 10;
-      min-width: 360px;
+      width: 520px;
+      max-width: 92%;
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 56px;
+      font-size: 60px;
       color: #c9184a;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     p {
       font-size: 18px;
       color: #6a040f;
-      margin-bottom: 35px;
+      margin-bottom: 40px;
+      line-height: 1.6;
     }
 
-    /* Button area split */
+    /* Button layout */
     .buttons {
-      position: relative;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
       width: 100%;
-      height: 80px;
+      height: 90px;
+      position: relative;
     }
 
     .yes-wrapper {
       width: 50%;
       display: flex;
       justify-content: center;
+      align-items: center;
       z-index: 2;
     }
 
     .no-area {
       width: 50%;
-      height: 100%;
       position: relative;
     }
 
     button {
       font-size: 18px;
-      padding: 14px 34px;
+      padding: 14px 36px;
       border-radius: 40px;
       border: none;
       cursor: pointer;
@@ -106,9 +112,9 @@
     }
 
     .love {
-      margin-top: 30px;
+      margin-top: 35px;
       font-family: 'Great Vibes', cursive;
-      font-size: 36px;
+      font-size: 38px;
       color: #ff4d6d;
       animation: fadeIn 1s ease forwards;
     }
@@ -117,17 +123,43 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Mobile tweaks */
+    @media (max-width: 480px) {
+      .card {
+        padding: 40px 25px;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 12px 26px;
+      }
+
+      .buttons {
+        height: 80px;
+      }
+    }
   </style>
 </head>
 <body>
 
+<!-- Floating hearts -->
 <script>
   for (let i = 0; i < 20; i++) {
     const heart = document.createElement("div");
     heart.className = "heart";
     heart.innerHTML = "❤";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = 15 + Math.random() * 25 + "px";
+    heart.style.fontSize = 14 + Math.random() * 24 + "px";
     heart.style.animationDuration = 6 + Math.random() * 6 + "s";
     document.body.appendChild(heart);
   }
@@ -141,12 +173,10 @@
   </p>
 
   <div class="buttons">
-    <!-- YES is locked -->
     <div class="yes-wrapper">
       <button id="yesBtn" onclick="sayYes()">Yes, always 💖</button>
     </div>
 
-    <!-- NO can move ONLY here -->
     <div class="no-area" id="noArea">
       <button id="noBtn">No 💔</button>
     </div>
@@ -162,7 +192,7 @@
   function moveNoButton() {
     const area = noArea.getBoundingClientRect();
     const btn = noBtn.getBoundingClientRect();
-    const padding = 10;
+    const padding = 8;
 
     const maxX = area.width - btn.width - padding;
     const maxY = area.height - btn.height - padding;
@@ -174,8 +204,19 @@
     noBtn.style.top = y + "px";
   }
 
+  // Desktop
   noBtn.addEventListener("mouseenter", moveNoButton);
-  noBtn.addEventListener("touchstart", moveNoButton);
+
+  // Mobile
+  noBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    moveNoButton();
+  });
+
+  noBtn.addEventListener("touchstart", function (e) {
+    e.preventDefault();
+    moveNoButton();
+  });
 
   function sayYes() {
     document.getElementById("loveMsg").innerHTML =
