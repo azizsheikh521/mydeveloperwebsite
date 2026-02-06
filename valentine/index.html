@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Valentine ❤️</title>
+
+  <!-- Romantic Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background: radial-gradient(circle at top, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Floating hearts background */
+    .heart {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 20px;
+      animation: floatUp 8s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.3);
+        opacity: 0;
+      }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px 60px;
+      border-radius: 30px;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 56px;
+      color: #c9184a;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #6a040f;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 14px 34px;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #yesBtn {
+      background: linear-gradient(135deg, #ff4d6d, #ff758f);
+      color: white;
+      box-shadow: 0 10px 25px rgba(255, 77, 109, 0.5);
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.15);
+      box-shadow: 0 15px 35px rgba(255, 77, 109, 0.7);
+    }
+
+    #noBtn {
+      background: #dee2e6;
+      color: #495057;
+    }
+
+    .love {
+      margin-top: 30px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: #ff4d6d;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating hearts -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = 15 + Math.random() * 25 + "px";
+      heart.style.animationDuration = 6 + Math.random() * 6 + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <div class="card">
+    <h1>My Love</h1>
+    <p>Every day with you is my favorite story…<br>Will you be my Valentine? 💕</p>
+
+    <div class="buttons">
+      <button id="yesBtn" onclick="sayYes()">Yes, always 💖</button>
+      <button id="noBtn">No 💔</button>
+    </div>
+
+    <div class="love" id="loveMsg"></div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    let escaped = false;
+
+    function moveNoButton() {
+      if (!escaped) {
+        noBtn.style.position = "absolute";
+        escaped = true;
+      }
+
+      const padding = 20;
+      const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+      const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    noBtn.addEventListener("mouseover", moveNoButton);
+    noBtn.addEventListener("touchstart", moveNoButton);
+
+    function sayYes() {
+      document.getElementById("loveMsg").innerHTML =
+        "Forever sounds perfect… with you 💞";
+    }
+  </script>
+
+</body>
+</html>
