@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>My Valentine ❤️</title>
 
-  <!-- Romantic Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
@@ -19,27 +18,17 @@
       overflow: hidden;
     }
 
-    /* Floating hearts background */
     .heart {
       position: absolute;
       color: rgba(255, 255, 255, 0.6);
-      font-size: 20px;
       animation: floatUp 8s linear infinite;
       pointer-events: none;
     }
 
     @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) scale(0.8);
-        opacity: 0;
-      }
-      20% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.3);
-        opacity: 0;
-      }
+      0% { transform: translateY(100vh); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
     }
 
     .card {
@@ -48,9 +37,9 @@
       border-radius: 30px;
       text-align: center;
       box-shadow: 0 30px 60px rgba(0,0,0,0.25);
-      position: relative; /* keeps No button inside */
+      position: relative;
       z-index: 10;
-      min-width: 320px;
+      min-width: 360px;
     }
 
     h1 {
@@ -66,13 +55,27 @@
       margin-bottom: 35px;
     }
 
+    /* Button area split */
     .buttons {
       position: relative;
-      height: 80px; /* space for movement */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 80px;
+    }
+
+    .yes-wrapper {
+      width: 50%;
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 25px;
+      z-index: 2;
+    }
+
+    .no-area {
+      width: 50%;
+      height: 100%;
+      position: relative;
     }
 
     button {
@@ -81,7 +84,6 @@
       border-radius: 40px;
       border: none;
       cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       font-family: 'Poppins', sans-serif;
     }
 
@@ -89,11 +91,11 @@
       background: linear-gradient(135deg, #ff4d6d, #ff758f);
       color: white;
       box-shadow: 0 10px 25px rgba(255, 77, 109, 0.5);
+      transition: transform 0.3s ease;
     }
 
     #yesBtn:hover {
       transform: scale(1.15);
-      box-shadow: 0 15px 35px rgba(255, 77, 109, 0.7);
     }
 
     #noBtn {
@@ -119,61 +121,67 @@
 </head>
 <body>
 
-  <!-- Floating hearts -->
-  <script>
-    for (let i = 0; i < 20; i++) {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "❤";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = 15 + Math.random() * 25 + "px";
-      heart.style.animationDuration = 6 + Math.random() * 6 + "s";
-      document.body.appendChild(heart);
-    }
-  </script>
+<script>
+  for (let i = 0; i < 20; i++) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = 15 + Math.random() * 25 + "px";
+    heart.style.animationDuration = 6 + Math.random() * 6 + "s";
+    document.body.appendChild(heart);
+  }
+</script>
 
-  <div class="card">
-    <h1>My Love</h1>
-    <p>
-      Every day with you is my favorite story…<br>
-      Will you be my Valentine? 💕
-    </p>
+<div class="card">
+  <h1>My Love</h1>
+  <p>
+    Every day with you is my favorite story…<br>
+    Will you be my Valentine? 💕
+  </p>
 
-    <div class="buttons" id="btnArea">
+  <div class="buttons">
+    <!-- YES is locked -->
+    <div class="yes-wrapper">
       <button id="yesBtn" onclick="sayYes()">Yes, always 💖</button>
-      <button id="noBtn">No 💔</button>
     </div>
 
-    <div class="love" id="loveMsg"></div>
+    <!-- NO can move ONLY here -->
+    <div class="no-area" id="noArea">
+      <button id="noBtn">No 💔</button>
+    </div>
   </div>
 
-  <script>
-    const noBtn = document.getElementById("noBtn");
-    const btnArea = document.getElementById("btnArea");
+  <div class="love" id="loveMsg"></div>
+</div>
 
-    function moveNoButton() {
-      const areaRect = btnArea.getBoundingClientRect();
-      const btnRect = noBtn.getBoundingClientRect();
-      const padding = 10;
+<script>
+  const noBtn = document.getElementById("noBtn");
+  const noArea = document.getElementById("noArea");
 
-      const maxX = areaRect.width - btnRect.width - padding;
-      const maxY = areaRect.height - btnRect.height - padding;
+  function moveNoButton() {
+    const area = noArea.getBoundingClientRect();
+    const btn = noBtn.getBoundingClientRect();
+    const padding = 10;
 
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
+    const maxX = area.width - btn.width - padding;
+    const maxY = area.height - btn.height - padding;
 
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    }
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
-    noBtn.addEventListener("mouseenter", moveNoButton);
-    noBtn.addEventListener("touchstart", moveNoButton);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
 
-    function sayYes() {
-      document.getElementById("loveMsg").innerHTML =
-        "Forever sounds perfect… with you 💞";
-    }
-  </script>
+  noBtn.addEventListener("mouseenter", moveNoButton);
+  noBtn.addEventListener("touchstart", moveNoButton);
+
+  function sayYes() {
+    document.getElementById("loveMsg").innerHTML =
+      "Forever sounds perfect… with you 💞";
+  }
+</script>
 
 </body>
 </html>
