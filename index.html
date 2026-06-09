@@ -1,112 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aziz Sheikh | Android Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: #555;
-    }
-
-    .app-list {
-      list-style: none;
-      padding: 0;
-      max-width: 500px;
-      width: 100%;
-    }
-
-    .app-list li {
-      margin: 1rem 0;
-    }
-
-    .app-link {
-      display: block;
-      padding: 1rem;
-      background: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .app-link:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    }
-
-    footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #888;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .app-link {
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aziz Sheikh | Premium Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght=400;600;800;900&family=Rajdhani:wght=500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-    <h1>Aziz Sheikh</h1>
-    <p>Android Developer | Indie App Creator</p>
-  </header>
+<body class="light-theme">
 
-  <section>
-    <h2>My Apps on Google Play</h2>
-    <ul class="app-list">
-      <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.tapthecolor" rel="noopener noreferrer">App 1 – Tap The Color</a></li>
-      <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.imagepuzzle" target="_blank" rel="noopener noreferrer">App 2 – Image Puzzle</a></li>
-     <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.bricks" target="_blank" rel="noopener noreferrer">App 3 – Bricks</a></li>
-       <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.chess" target="_blank" rel="noopener noreferrer">App 4 – Chess</a></li>
-       <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.sudoku" target="_blank" rel="noopener noreferrer">App 5 – Sudoku</a></li>
-       <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.crosswordpuzzle" target="_blank" rel="noopener noreferrer">App 6 – Crossword Puzzle</a></li>
-       <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.spaceshooter" target="_blank" rel="noopener noreferrer">App 7 – Space Shooter</a></li>
-       <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.tictactoe" target="_blank" rel="noopener noreferrer">App 8 – Tic Tac Toe</a></li>
-       <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.getthemole" target="_blank" rel="noopener noreferrer">App 9 – Get The Mole</a></li>
-       <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.cardsmatching" target="_blank" rel="noopener noreferrer">App 10 – Memory Match–Card Puzzle Game</a></li>
-       <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.numericpuzzle" target="_blank" rel="noopener noreferrer">App 11 – Number Logic Game</a></li>
-      <li><a class="app-link" href="https://play.google.com/store/apps/details?id=com.azizsheikh.flappybird" target="_blank" rel="noopener noreferrer">App 12 – Flap Quest</a></li>
+    <div class="grid-background"></div>
+    <div class="radial-glow"></div>
 
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                AZIZ<span class="neon-text-cyan">SHEIKH</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
+                <li class="nav-item"><a href="#games" class="nav-link"><i class="fa-solid fa-gamepad"></i> Games</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-      <!-- Add more apps below -->
-    </ul>
-  </section>
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="glitch-wrapper">
+                <h2 class="hero-subtitle">WELCOME TO THE ARENA</h2>
+                <h1 class="hero-title" data-text="Hi, I am Aziz Sheikh">Hi, I am <span class="neon-text-magenta">Aziz Sheikh</span></h1>
+            </div>
+            <p class="hero-tagline">
+                <span class="role">Website & Game Developer</span> 
+                <span class="divider">|</span> 
+                <span class="company"><i class="fa-brands fa-salesforce"></i> Employee at Salesforce Company</span>
+            </p>
+            <div class="hero-buttons">
+                <a href="#games" class="btn btn-primary btn-glow-cyan"><i class="fa-solid fa-play"></i> View Games</a>
+                <a href="#contact" class="btn btn-secondary btn-glow-magenta"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>SCROLL DOWN</p>
+        </div>
+    </header>
 
-  <footer>
-    © 2025 Aziz Sheikh. All rights reserved.
-  </footer>
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ABOUT <span class="neon-text-cyan">ME</span></h2>
+                <div class="header-line line-cyan"></div>
+            </div>
+            <div class="about-wrapper">
+                <div class="about-graphic">
+                    <div class="cyber-box" style="padding: 0; overflow: hidden; height: 450px; border-radius: 12px; background: #fff; box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);">
+                        <img src="1000220433.jpg" onerror="this.src='1000220433.jpg.jpg'" alt="Aziz Sheikh Portrait" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block;">
+                        <div class="stat-badge">
+                            <span class="stat-number">11</span>
+                            <span class="stat-label">Live Games</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="bio-paragraph">
+                        <strong>Aziz Sheikh</strong> is a versatile <strong>Website & Game Developer</strong> who specializes in crafting dynamic web applications and publishing engaging games on the Google Play Store. He bridges the gap between clean code architectures and captivating user experiences.
+                    </p>
+                    <p class="bio-paragraph">
+                        With solid corporate engineering foundations as an <strong>Employee at Salesforce Company</strong>, he builds secure, scalable web systems while maintaining a high-performance publishing timeline for immersive mobile game environments.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-globe feature-icon text-cyan"></i>
+                            <h4>Web Architecture</h4>
+                            <p>Designing fast, scalable, and responsive custom websites.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-mobile-screen-button feature-icon text-magenta"></i>
+                            <h4>Game Mechanics</h4>
+                            <p>Intuitive logic coupled with engaging loops and mobile publishing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="games" class="games-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">MY PLAYSTORE <span class="neon-text-magenta">GAMES</span></h2>
+                <div class="header-line line-magenta"></div>
+            </div>
+            
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/fFq-rRRBpOgY8hp2pCJgIHNAcOgVHY_qAmTP8B9G06l-6rXvCMFiSLRn5GUPeTzbmGU=w240-h480-rw" alt="Tap The Color Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Tap The Color</h3>
+                        <p class="game-description">An addictive, fast-paced reflex arcade puzzle testing your extreme hand-eye color coordination under pressure.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.tapthecolor" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/Ap5sXl6H3CFO2Pcx6TDWUjwSY26es5hrrvJQF87OnUnLNYChbKOaSODdBG6wCsCvT2pA=w240-h480-rw" alt="Image Puzzle Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Image Puzzle</h3>
+                        <p class="game-description">A creative sliding piece reconstruction puzzle matching images perfectly against structural geometric layouts.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.imagepuzzle" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/oeBSLZvyXKUWjdkC74hGJubctBiDtQdlXGA6UR8FgN8uxLfgOApo2HFpZxpc8epOTZ43=w240-h480-rw" alt="Bricks Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Bricks</h3>
+                        <p class="game-description">Classic nostalgic retro brick breaker re-engineered with custom physics engines, powerups, and neon assets.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.bricks" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/i_VkF1W4pFZBedWIXe6WT_q3ZQeUFT1NrakfK7EpJywlhirfVFEb3yji51yhDRA_y1k=w240-h480-rw" alt="Sudoku Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Sudoku</h3>
+                        <p class="game-description">Advanced mathematical grid logic matrix system delivering infinite multi-difficulty levels and validation mechanics.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.sudoku" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/9u5i7ohTu3bYBFpsKxkIFL1RhsBOp6tRY6OxySbpmf4piB2eLgYl1LTGIk5KS4vexg=w240-h480-rw" alt="Crossword Puzzle Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Crossword Puzzle</h3>
+                        <p class="game-description">Lexical string-matching engine validating intersecting characters dynamically for high vocabulary building.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.crosswordpuzzle" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/3BNOuIhASFFWx8Aw42iBVmtoqEu3IOb_TfuH7hgA_eFP_vtLSUZGpTlIiq2xnzDA_iw=w240-h480-rw" alt="Space Shooter Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Space Shooter</h3>
+                        <p class="game-description">Fast scrolling cosmic shoot-em-up incorporating particle rendering bursts and complex collision parameters.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.spaceshooter" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/ZQNKZEgGXbqggiFGsoyBzppxvBvhbGIU16xa9zQbYApSRyM6ZtvIKQqihFz2G93HCUgxIakdf26sxTNJcY7XK84=w240-h480-rw" alt="Tic Tac Toe Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Tic Tac Toe</h3>
+                        <p class="game-description">Modern variant matrix grid allowing both hyper responsive local pass-and-play states and smart automated CPU play.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.tictactoe" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/LgD7Ncl7X8xJasZDjccIBYzE48tqrQyGCPwruBYVFUjWOqJY32jZJbBq8OKWF5kxj0w=w240-h480-rw" alt="Get The Mole Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Get The Mole</h3>
+                        <p class="game-description">Whack-a-mole speed action loop requiring randomized element selection intervals to push performance response bounds.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.getthemole" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/qroM4I-ZCUOmHz7q6Ik3hrzAYJmWWRf1fLOijckOm71uYysS3S6B6ndeFl_sD0IiN2I=w240-h480-rw" alt="Cards Matching Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Cards Matching</h3>
+                        <p class="game-description">High-performance spatial memory tracking interface using rapid state updates and transition animations.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.cardsmatching" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/xtRgLXauIIp62wGqD3Od_B2FOmF1n3KXmDQftqhHtDXEwFo4bP3w4-Nu27dLx1hKSw=w240-h480-rw" alt="Numeric Puzzle Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Numeric Puzzle</h3>
+                        <p class="game-description">Algorithmic sorting sliding array grid targeting complete mathematical configuration alignments.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.numericpuzzle" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="card-glow"></div>
+                    <div class="game-icon-wrapper">
+                        <img src="https://play-lh.googleusercontent.com/V8NaUll46JYUVvDoZOSqBIVM6aGGpXzBdc4H0OvDQeBGlHkZCDcxURQpA0n6TpAXM-Y=w240-h480-rw" alt="Flappy Bird Icon" class="game-card-img">
+                    </div>
+                    <div class="game-details">
+                        <h3 class="game-title">Flappy Bird</h3>
+                        <p class="game-description">Precision gravity velocity handling recreation challenging high score retention with procedural obstacles.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.azizsheikh.flappybird" target="_blank" class="btn-game">
+                            <i class="fa-brands fa-google-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">TECHNICAL <span class="neon-text-cyan">BADGES</span></h2>
+                <div class="header-line line-cyan"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-badge-wrapper">
+                    <div class="skill-badge cyan-glow">
+                        <i class="fa-solid fa-code badge-icon"></i>
+                        <span class="badge-text">Web Development</span>
+                    </div>
+                </div>
+                <div class="skill-badge-wrapper">
+                    <div class="skill-badge magenta-glow">
+                        <i class="fa-solid fa-gamepad badge-icon"></i>
+                        <span class="badge-text">Game Development</span>
+                    </div>
+                </div>
+                <div class="skill-badge-wrapper">
+                    <div class="skill-badge cyan-glow">
+                        <i class="fa-brands fa-android badge-icon"></i>
+                        <span class="badge-text">Android Games</span>
+                    </div>
+                </div>
+                <div class="skill-badge-wrapper">
+                    <div class="skill-badge magenta-glow">
+                        <i class="fa-solid fa-laptop-code badge-icon"></i>
+                        <span class="badge-text">Frontend Design</span>
+                    </div>
+                </div>
+                <div class="skill-badge-wrapper">
+                    <div class="skill-badge cyan-glow">
+                        <i class="fa-solid fa-wand-magic-sparkles badge-icon"></i>
+                        <span class="badge-text">UI/UX Layouts</span>
+                    </div>
+                </div>
+                <div class="skill-badge-wrapper">
+                    <div class="skill-badge magenta-glow">
+                        <i class="fa-solid fa-brain badge-icon"></i>
+                        <span class="badge-text">Puzzle Architecture</span>
+                    </div>
+                </div>
+                <div class="skill-badge-wrapper">
+                    <div class="skill-badge cyan-glow">
+                        <i class="fa-brands fa-js badge-icon"></i>
+                        <span class="badge-text">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-badge-wrapper">
+                    <div class="skill-badge magenta-glow">
+                        <i class="fa-solid fa-database badge-icon"></i>
+                        <span class="badge-text">DBMS & Logic</span>
+                    </div>
+                </div>
+                <div class="skill-badge-wrapper">
+                    <div class="skill-badge cyan-glow">
+                        <i class="fa-solid fa-puzzle-piece badge-icon"></i>
+                        <span class="badge-text">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">INITIATE <span class="neon-text-magenta">CONTACT</span></h2>
+                <div class="header-line line-magenta"></div>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="info-title">COMMS TERMINAL</h3>
+                    <p class="info-desc">Feel free to reach out via direct phone link or secure instantaneous chat network protocols.</p>
+                    
+                    <div class="info-details">
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope text-magenta"></i>
+                            <div>
+                                <h5>Secure Node</h5>
+                                <p><a href="mailto:azizsheikh521@gmail.com" style="color: inherit; text-decoration: none;">azizsheikh521@gmail.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone text-cyan"></i>
+                            <div>
+                                <h5>Direct Line</h5>
+                                <p>+918421666330</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/918421666330" target="_blank" class="whatsapp-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="portfolio-form" class="cyber-form">
+                        <div class="form-group">
+                            <label for="name">Operator Name</label>
+                            <input type="text" id="name" required placeholder="Enter your identity...">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Mobile Number</label>
+                            <input type="tel" id="phone" required placeholder="Enter your mobile no...">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Comms Email</label>
+                            <input type="email" id="email" required placeholder="Enter your email...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Transmission Message</label>
+                            <textarea id="message" rows="5" required placeholder="Type parameters here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow-magenta btn-submit">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    <div id="form-status" class="form-status-msg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2026 Aziz Sheikh. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
